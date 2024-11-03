@@ -1,4 +1,4 @@
-# Daily C Coding Practice
+# Daily  Coding Practice
 
 Welcome to my daily  coding practice repository! 🚀
 
