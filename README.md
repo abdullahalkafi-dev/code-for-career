@@ -6,8 +6,7 @@ Welcome to my daily  coding practice repository! 🚀
 This repository contains my daily exercises and practice problems focused on mastering the C programming language. Each file is named according to the date and problem number to help track my progress and keep my learning organized.
 
 ## Repository Structure
-- **`build/Debug/`**: Directory containing build files and executables for debugging purposes.
-- **`*.c`**: C source files for daily practice, named according to the date and problem number (e.g., `d4m11y2024n1.c` for the first exercise of 04/11/2024 ).
+- **`*.c`**: C source folder for daily practice, named according to the date (e.g., `D01M11y2024` for the  exercise of 04/11/2024 ).
 - **`*.exe`**: Executable files generated from the corresponding C source files.
 - **`README.md`**: Overview and structure of this repository.
 
