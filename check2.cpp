@@ -1,12 +1,16 @@
-#include<bits/stdc++.h>
-
-
+#include <bits/stdc++.h>
 using namespace std;
 
-int main(){
+int main()
+{
 
- 
-cout<< (0xf36f90)<<endl;
+    long long sum = 0;
+    for (int i = 0; i < 1000000000; i++)
+    {
+        sum += i;
+    }
+
+    cout << sum << endl;
 
     return 0;
 }
