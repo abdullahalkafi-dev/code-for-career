@@ -97,13 +97,49 @@ void insert_at_any_position(Node *&head, Node *&tail, int index, int val)
     next_node->prev = new_node;
 }
 
-void delete_head(Node *&head)
+void delete_head(Node *&head, Node *&tail)
 {
-
+    if (head->next == NULL)
+    {
+        tail = NULL;
+        return;
+    }
     Node *nextHead = head->next;
 
     delete head;
     head = nextHead;
+    head->prev = NULL;
+}
+
+void delete_at_any_position(Node *&head, int ind)
+{
+    if (head == NULL || ind < 0)
+        return;
+
+    if (ind == 0)
+    {
+        Node *NodeToDelete = head;
+
+        head = head->next;
+        if (head != NULL)
+            head->prev = NULL;
+        delete NodeToDelete;
+        return;
+    }
+
+    Node *temp = head;
+    int i = 0;
+    while (i < ind - 1 & temp->next !=NULL)
+    {
+        temp = temp->next;
+        i++;
+    }
+    if(temp->next !=NULL){
+    temp->next->prev = temp->next;
+
+    }
+
+    delete temp->next;
 }
 
 int main()
@@ -117,17 +153,30 @@ int main()
     a->next = tail;
     tail->prev = a;
     insert_head(head, 0, tail);
-    delete_head(head);
-    insert_head(head, -10, tail);
     
+    insert_head(head, -10, tail);
+
     insert_head(head, -20, tail);
     insert_tail(head, 40, tail);
     insert_at_any_position(head, tail, 3, 5);
     insert_at_any_position(head, tail, 3, 6);
     insert_at_any_position(head, tail, 3, 7);
+    //    delete_head(head,tail);
+    // delete_head(head,tail);
+    delete_at_any_position(head, 10);
+
+  int val;
+  while(true){
+    cin>>val;
+    if(val==-1){
+        break;
+    }
+    insert_tail(head,val,tail);
+  }
+
+
     print_forword(head);
     cout << endl;
     print_backword(tail);
-
     return 0;
 }
